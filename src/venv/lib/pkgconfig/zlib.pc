@@ -1,0 +1,13 @@
+prefix=/Users/sriharshithaavasarala/Documents/Women in AI hackathon/venv
+exec_prefix=/Users/sriharshithaavasarala/Documents/Women in AI hackathon/venv
+libdir=/Users/sriharshithaavasarala/Documents/Women in AI hackathon/venv/lib
+sharedlibdir=/Users/sriharshithaavasarala/Documents/Women in AI hackathon/venv/lib
+includedir=/Users/sriharshithaavasarala/Documents/Women in AI hackathon/venv/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
