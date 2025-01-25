@@ -4,10 +4,13 @@ from llama_index.llms.openai import OpenAI
 from llama_index.core import VectorStoreIndex, Settings
 from llama_index.readers.file import PDFReader
 from llama_index.core.memory import ChatMemoryBuffer
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 # Hardcoded API Key
-os.environ["OPENAI_API_KEY"] = os.environ.get('OPENAI_API_KEY')
+os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY')
 
 st.set_page_config(page_title="Femme", page_icon="🧠")
 
