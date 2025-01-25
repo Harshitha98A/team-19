@@ -7,7 +7,7 @@ from llama_index.core.memory import ChatMemoryBuffer
 
 
 # Hardcoded API Key
-os.environ["OPENAI_API_KEY"] = "${OPENAI_KEY}"
+os.environ["OPENAI_API_KEY"] = os.environ.get('OPENAI_API_KEY')
 
 st.set_page_config(page_title="Femme", page_icon="🧠")
 
