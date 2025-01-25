@@ -7,7 +7,7 @@ from llama_index.core.memory import ChatMemoryBuffer
 
 
 # Hardcoded API Key
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "${OPENAI_KEY}"
 
 st.set_page_config(page_title="Femme", page_icon="🧠")
 
@@ -80,20 +80,6 @@ def render_suggestions():
                 # When button is clicked, set it as the query
                 st.session_state.query = suggestion
                 st.rerun()
-
-
-def ask():
-    response = get_response()
-    render_bot_response(question='?', response=response)
-
-
-def render_bot_response(question, response):
-    response_text = f'{question}: {response}'
-    st.session_state.responses.append(response_text)
-
-
-def get_response():
-    return "You should..."
 
 
 def render_chat(chat_engine):
@@ -176,8 +162,6 @@ def load_engine():
 
 def main():
     chat_engine = load_engine()
-    st.session_state.messages = []
-    st.session_state.responses = []
 
     st.title("Femme")
     st.write("Interactive Q&A Chatbot: Ask your questions and get answers.")
